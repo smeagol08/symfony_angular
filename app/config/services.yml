@@ -3,7 +3,19 @@
 parameters:
 #    parameter_name: value
 
-services:
+
 #    service_name:
 #        class: AppBundle\Directory\ClassName
 #        arguments: ["@another_service_name", "plain_value", "%parameter_name%"]
+
+services:
+    wsse.security.authentication.provider:
+        class: AppBundle\Security\Authentication\Provider\WsseProvider
+        arguments:
+            - 'fos_userbundle' # User Provider
+            - '%kernel.cache_dir%/security/nonces'
+        public: false
+    wsse.security.authentication.listener:
+        class: AppBundle\Security\Firewall\WsseListener
+        arguments: ['@security.token_storage', '@security.authentication.manager']
+        public: false
