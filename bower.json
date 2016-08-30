@@ -16,6 +16,9 @@
   "dependencies": {
     "angular": "^1.5.8",
     "jquery": "^3.1.0",
-    "bootstrap": "^3.3.6"
+    "bootstrap": "^3.3.6",
+	"angular-cookies",
+	"restangular",
+	"angular-bootstrap"
   }
 }

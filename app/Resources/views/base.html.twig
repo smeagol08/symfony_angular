@@ -2,26 +2,62 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>{% block title %}Notice board{% endblock %}</title>
         {% block stylesheets %}
-         	<link rel="stylesheet" href="{{ asset('assets/vendor/bootstrap/dist/css/bootstrap.min.css') }}">  
+         	<link rel="stylesheet" href="{{ asset('assets/vendor/bootstrap/dist/css/bootstrap.min.css') }}">
+         	<link rel="stylesheet" href="{{ asset('public/css/app.css') }}">
         {% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
        
+        <script>
+        	var root_path = "{{ asset('', null, true) }}";
+        	var assets_path = root_path + "public/partials";
+    	</script>
     </head>
-    <body>
-        {% block body %}
-
+    <body ng-app="ApiClient">
+    	<div ng-view class="container">
+    		<!-- ANGULAR CONTENT GOES HERE -->
+		</div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+        {% block body %}			            
+        {% endblock %} 
         
-        
-        {% endblock %}
-        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/sha1.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/sha512.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/md5.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/components/enc-base64-min.js"></script>
+		       
         {% block javascripts %}
         	<script src="{{ asset('assets/vendor/jquery/dist/jquery.min.js') }}"></script>
  			<script src="{{ asset('assets/vendor/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+ 			
         	<script src="{{ asset('assets/vendor/angular/angular.min.js') }}"></script>
-        	<script src="{{ asset('assets/vendor/angular/angular-route.min.js') }}"></script>
-        	<script src="{{ asset('js/script.js') }}" ></script>      
+        	<script src="{{ asset('assets/vendor/angular-route/angular-route.min.js') }}"></script>
+        	<script src="{{ asset('assets/vendor/angular-cookies/angular-cookies.min.js') }}"></script>
+        	<script src="{{ asset('assets/vendor/lodash/dist/lodash.min.js') }}"></script>    
+        	<script src="{{ asset('assets/vendor/restangular/dist/restangular.min.js') }}"></script> 
+        	<script src="{{ asset('assets/vendor/angular-bootstrap/ui-bootstrap-tpls.min.js') }}"></script>
+    	
+
+        	
+        	<script src="{{ asset('public/js/app.js') }}" ></script>
+        	<script src="{{ asset('public/js/app-controller.js') }}" ></script> 
+        	<script src="{{ asset('public/js/app-services.js') }}" ></script>               
         {% endblock %}
     </body>
 </html>

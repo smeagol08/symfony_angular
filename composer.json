@@ -31,7 +31,8 @@
 		"jms/serializer-bundle" : "^1.1",
 		"friendsofsymfony/rest-bundle" : "^2.0",
 		"elao/json-http-form-bundle" : "^2.0",
-		"escapestudios/wsse-authentication-bundle": "~2.2"
+		"escapestudios/wsse-authentication-bundle": "~2.2",
+		"symfony/assetic-bundle": "^2.8"
 	},
 	"require-dev" : {
 		"sensio/generator-bundle" : "^3.0",
